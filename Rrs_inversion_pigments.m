@@ -42,6 +42,9 @@ function pigments_from_Rrs = Rrs_inversion_pigments(Rrs,Rrs_unc,wl,tem,sal)
 %               +c2 (Chlc12), and photoprotective carotenoids (PPC) defined
 %               as abcarotene+zeaxanthin+alloxanthin+diadinoxanthin. All
 %               pigments and uncertainties are in mg m^-3.
+%   pigments_from_Rrs.amps       - Amplitudes of Gaussian absorption functions
+%               representing Chla, Chlb, Chlc12, and PPC. Can be used to derive
+%               updated relationships between Gaussians and HPLC pigments.
 %
 % -------------------------------------------------------------------------
 %
@@ -205,7 +208,8 @@ UB = [s_nap(3), m_nap(3), s_cdom(3), m_cdom(3), bbpbp_ratio(3), cpgam(3), m_cp(3
  pigments_from_Rrs.est_pigm = pigmedian;
  pigments_from_Rrs.pigm_unc = pigunc;
  pigments_from_Rrs.vars_units = 'Chla, Chlb, Chlc1+c2, PPC; all in mg m^-3';
- 
+ pigments_from_Rrs.amps = Amp2(11:14);
+
 end
 
 function [a_sw,bb_sw] = get_water_iops(wave,T,S)
