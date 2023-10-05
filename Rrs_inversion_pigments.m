@@ -267,7 +267,8 @@ if T==0 || isnan(T)==1,T=22;end
 T_pope=22.0;
 
 % use salt water scattering from Zhang et al 2009
-[betasw124, bb_sw, beta90sw, theta] = betasw124_ZHH2009(wave, S, T);
+[betasw124, b_sw, beta90sw, theta] = betasw124_ZHH2009(wave, S, T);
+bb_sw = b_sw./2; % divide total scattering by 2 to get the backscattering component
 
 % use the temp and salinity corrections from Sullivan et al. 2006
 [psiT,psiS] = tempsal_corr(wave);
