@@ -188,8 +188,8 @@ UB = [s_nap(3), m_nap(3), s_cdom(3), m_cdom(3), bbpbp_ratio(3), cpgam(3), m_cp(3
  % Chase et al., 2017 (JGR-Oceans) and a Monte Carlo method
  % matrix:   A   A_unc   B   B_unc
  coeffs = [0.048 0.008 0.643 0.068;...
-     0.033 0.013 0.327 0.074;...
      0.043 0.009 0.561 0.059;...
+     0.033 0.013 0.327 0.074;...
      0.079 0.024 0.823 0.105];
  
  % loop through the four pigments that are estimated
@@ -207,7 +207,7 @@ UB = [s_nap(3), m_nap(3), s_cdom(3), m_cdom(3), bbpbp_ratio(3), cpgam(3), m_cp(3
  % populate structure
  pigments_from_Rrs.est_pigm = pigmedian;
  pigments_from_Rrs.pigm_unc = pigunc;
- pigments_from_Rrs.vars_units = 'Chla, Chlb, Chlc1+c2, PPC; all in mg m^-3';
+ pigments_from_Rrs.vars_units = 'Chla, Chlc1+c2, Chlb, PPC; all in mg m^-3';
  pigments_from_Rrs.amps = Amp2(11:14);
 
 end
